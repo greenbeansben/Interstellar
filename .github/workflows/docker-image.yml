@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v4
       - name: build
         run: |
-          docker build . -t ${{ secrets.greenbeansben}}/${{ secrets.reptest}}:latest
+          docker build . -t ${{ secrets.DOCKERHUB_USERNAME}}/${{ secrets.DOCKERHUB_NAME}}:latest
       - name: publish
         run: |
-          docker login -u ${{ secrets.greenbeansben}} -p ${{ secrets.thetoken}}
-          docker push ${{ secrets.DOCKERHUB_greenbeansben}}/${{ secrets.reptest}}:latest
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME}} -p ${{ secrets.DOCKERHUB_TOKEN}}
+          docker push ${{ secrets.DOCKERHUB_DOCKERHUB_USERNAME}}/${{ secrets.DOCKERHUB_NAME}}:latest
